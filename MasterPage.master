@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-   	<title>Home</title>
+   	<title>Giầy Store</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -72,10 +72,10 @@
 
 			<div class="wrap_header">
 				<!-- Logo -->
-				<a href="index.html" class="logo">
-					<img src="images/icons/logo.png" alt="IMG-LOGO">
+				<a href="Index.aspx" class="logo">
+                      <asp:Image  ImageUrl="images/icons/logoStore.png" runat="server" />
 				</a>
-
+                
 				<!-- Menu -->
 				<div class="wrap_menu">
 					<nav class="menu">
@@ -616,5 +616,11 @@
 	<script src="js/main.js"></script>
     
     </form>
+        <!--================ CHAT BOX ===============================-->
+
+    <script src="https://uhchat.net/code.php?f=48a92d"></script>
+
+    <!--================ /CHAT BOX ===============================-->
 </body>
+
 </html>
