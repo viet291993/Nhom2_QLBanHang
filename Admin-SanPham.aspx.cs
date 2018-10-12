@@ -11,9 +11,4 @@ public partial class Default2 : System.Web.UI.Page
     {
 
     }
-
-    protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
-    }
 }
