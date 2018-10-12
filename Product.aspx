@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="Product.aspx.cs" Inherits="Default3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Product.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-
-
+    
       <!-- Title Page -->
     <section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(images/banner.png); ">
         <h2 class="l-text2 t-center">
@@ -171,10 +170,10 @@
 
                     <!-- Product -->
                     <div class="row">
-                        
-                        <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1">
+                                       
+                        <asp:ListView ID="ListView2" runat="server" DataSourceID="SanPham">
                             <AlternatingItemTemplate>
-                                <div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
+                                 <div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
                             <!-- Block2 -->
                             <div class="block2">
                                 <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
@@ -210,10 +209,10 @@
                                 
                             </AlternatingItemTemplate>
                             <EditItemTemplate>
-                                <span style="">HinhAnh:
-                                    <asp:TextBox Text='<%# Bind("HinhAnh") %>' runat="server" ID="HinhAnhTextBox" /><br />
-                                    TenSP:
+                                <span style="">TenSP:
                                     <asp:TextBox Text='<%# Bind("TenSP") %>' runat="server" ID="TenSPTextBox" /><br />
+                                    HinhAnh:
+                                    <asp:TextBox Text='<%# Bind("HinhAnh") %>' runat="server" ID="HinhAnhTextBox" /><br />
                                     GiaBan:
                                     <asp:TextBox Text='<%# Bind("GiaBan") %>' runat="server" ID="GiaBanTextBox" /><br />
                                     <asp:Button runat="server" CommandName="Update" Text="Update" ID="UpdateButton" /><asp:Button runat="server" CommandName="Cancel" Text="Cancel" ID="CancelButton" /><br />
@@ -224,10 +223,10 @@
                                 <span>No data was returned.</span>
                             </EmptyDataTemplate>
                             <InsertItemTemplate>
-                                <span style="">HinhAnh:
-                                    <asp:TextBox Text='<%# Bind("HinhAnh") %>' runat="server" ID="HinhAnhTextBox" /><br />
-                                    TenSP:
+                                <span style="">TenSP:
                                     <asp:TextBox Text='<%# Bind("TenSP") %>' runat="server" ID="TenSPTextBox" /><br />
+                                    HinhAnh:
+                                    <asp:TextBox Text='<%# Bind("HinhAnh") %>' runat="server" ID="HinhAnhTextBox" /><br />
                                     GiaBan:
                                     <asp:TextBox Text='<%# Bind("GiaBan") %>' runat="server" ID="GiaBanTextBox" /><br />
                                     <asp:Button runat="server" CommandName="Insert" Text="Insert" ID="InsertButton" /><asp:Button runat="server" CommandName="Cancel" Text="Clear" ID="CancelButton" /><br />
@@ -235,12 +234,12 @@
                                 </span>
                             </InsertItemTemplate>
                             <ItemTemplate>
-                                <div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
+                              <div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
                             <!-- Block2 -->
                             <div class="block2">
                                 <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
                                     
-                                     <asp:Image ImageUrl='<%# Eval("HinhAnh") %>' runat="server" ID="Image1" /><br />
+                                     <asp:Image ImageUrl='<%# Eval("HinhAnh") %>' runat="server" ID="HinhAnhLabel" /><br />
                                     <div class="block2-overlay trans-0-4">
                                         <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
                                             <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
@@ -258,27 +257,26 @@
 
                                 <div class="block2-txt p-t-20">
                                     <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-                                        <asp:Label Text='<%# Eval("TenSP") %>' runat="server" ID="Label1" /><br />
+                                        <asp:Label Text='<%# Eval("TenSP") %>' runat="server" ID="TenSPLabel" /><br />
                                     </a>
 
                                     <span class="block2-price m-text6 p-r-5">
-                                       <asp:Label Text='<%# Eval("GiaBan") %>' runat="server" ID="Label2" /><br />
+                                       <asp:Label Text='<%# Eval("GiaBan") %>' runat="server" ID="GiaBanLabel" /><br />
                                     <br />
                                     </span>
                                 </div>
                             </div>
                         </div>
-                               
+                                
                             </ItemTemplate>
                             <LayoutTemplate>
-                                <span runat="server" id="itemPlaceholder" />
-                               
+                               <span runat="server" id="itemPlaceholder" />
                             </LayoutTemplate>
                             <SelectedItemTemplate>
-                                <span style="">HinhAnh:
-                                    <asp:Label Text='<%# Eval("HinhAnh") %>' runat="server" ID="HinhAnhLabel" /><br />
-                                    TenSP:
+                                <span style="">TenSP:
                                     <asp:Label Text='<%# Eval("TenSP") %>' runat="server" ID="TenSPLabel" /><br />
+                                    HinhAnh:
+                                    <asp:Label Text='<%# Eval("HinhAnh") %>' runat="server" ID="HinhAnhLabel" /><br />
                                     GiaBan:
                                     <asp:Label Text='<%# Eval("GiaBan") %>' runat="server" ID="GiaBanLabel" /><br />
                                     <br />
@@ -286,15 +284,14 @@
                             </SelectedItemTemplate>
                         </asp:ListView>
 
-                        <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:QLBanHangNhom2ConnectionString %>' SelectCommand="SELECT [HinhAnh], [TenSP], [GiaBan] FROM [SanPham]"></asp:SqlDataSource>
-                    </div>
 
-                    <!-- Pagination -->
-                    <!--<div class="pagination flex-m flex-w p-t-26">
+                        <!-- Pagination -->
+                        <!--<div class="pagination flex-m flex-w p-t-26">
                         <a href="#" class="item-pagination flex-c-m trans-0-4 active-pagination">1</a>
                         <a href="#" class="item-pagination flex-c-m trans-0-4">2</a>
                     </div>-->
-                </div>
+                        <asp:SqlDataSource runat="server" ID="SanPham" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\QLBanHangNhom2.mdf;Integrated Security=True;Connect Timeout=30" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [TenSP], [HinhAnh], [GiaBan] FROM [SanPham]"></asp:SqlDataSource>
+                    </div>
             </div>
         </div>
     </section>

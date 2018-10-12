@@ -293,7 +293,7 @@
                         </SelectedItemTemplate>
                     </asp:ListView>
 
-                    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\QLBanHangNhom2.mdf;Integrated Security=True;Connect Timeout=30" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [HinhAnh], [TenSP], [GiaBan] FROM [SanPham]"></asp:SqlDataSource>
+                    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\QLBanHangNhom2.mdf;Integrated Security=True;Connect Timeout=30" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [HinhAnh], [TenSP], [GiaBan] FROM [SanPham]"></asp:SqlDataSource>
                     
 
 
